@@ -4,7 +4,6 @@ public class User {
     //Atributos
     private String userName;
     private String userPass;
-    private String userEmail;
     
     //Contrutor
     public User(String user, String pass) {
@@ -29,26 +28,17 @@ public class User {
         this.userPass = userPass;
     }
 
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-    
     //toString - Representação genérica do objeto
     @Override
     public String toString() {
         return "<hr>Nome: " + this.userName +
-                "<br>Email: "  + this.userEmail +
                 "<br>Senha: " + this.userPass;
     }
     
     //Métodos gerais
     public boolean isLogged() {
-        return (this.userName.equals("a")
-                && this.userPass.equals("a"));
+        return (this.userName.equals("donini")
+                && this.userPass.equals("senha1234"));
     }
     
 } //Fim da classe

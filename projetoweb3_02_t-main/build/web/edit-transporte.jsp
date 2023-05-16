@@ -1,4 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Transporte" %>
+
+<%
+      Transporte tr = 
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,18 +12,20 @@
         <link rel="icon" href="imj/logo.png"/>
     </head>
     <body>
-        <h1>Cadastrar</h1>
+        <h1>Editar</h1>
         <hr>
-        <h2>Novo meio de transporte</h2>
         <form action="TransporteController" method="post">
-            <input type="text" name="tipo" placeholder="Tipo de transporte" required>
+            <input type="text" name="cod" value="<%= tr.getcodTransporte%>" readonly>
             <br><br>
             
-            <input type="number" name="assentos" placeholder="Nº de assentos" min="1" required>
+            <input type="text" name="tipo" value="<%= tr.getTipo() %>" placeholder="Tipo de transporte" required>
+            <br><br>
+            
+            <input type="number" name="assentos" value="<%= tr.getAssentos()%>" placeholder="Nº de assentos" required>
             <br><br>
             
             <select name="combustivel" required>
-                <option value="">Selecione um item...</option>
+                <option value="<%= tr.getCombustivel() %>">Selecione um item...</option>
                 <option value="Gasolina">Gasolina</option>
                 <option value="Etanol">Etanol</option>
                 <option value="Diesel">Diesel</option>
@@ -28,7 +35,7 @@
             </select>
             
             <br><br>
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Atualizar">
             
         </form>
         

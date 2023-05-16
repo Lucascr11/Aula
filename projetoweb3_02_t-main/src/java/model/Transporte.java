@@ -6,11 +6,16 @@ public class Transporte {
         private int assentos;
         private String combustivel;
 
-        public Transporte(){
-        
-        }
+    public Transporte(){}    
         
     public Transporte(String tipo, int assentos, String combustivel) {
+        this.tipo = tipo;
+        this.assentos = assentos;
+        this.combustivel = combustivel;
+    }
+    
+        public Transporte(int id, String tipo, int assentos, String combustivel) {
+        this.codTransporte = id;
         this.tipo = tipo;
         this.assentos = assentos;
         this.combustivel = combustivel;
